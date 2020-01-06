@@ -1,0 +1,35 @@
+.search_result {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    width: 500px;
+    @include respond-to(550px) {
+      width: 100%;
+    }
+    li {
+      margin-bottom: 55px;
+    }
+    p {
+      font-size: 14px;
+      color: #4a4a4a;
+    }
+    h2 {
+      margin: 5px 0;
+      a {
+        color: #4a4a4a;
+        font-size: 20px;
+        font-weight: 400;
+        text-decoration: underline;
+        &:hover {
+          color: $green;
+        }
+        span {
+          color: $green;
+        }
+      }
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.lahiyye {
+  padding-top: 40px;
+  @include make-row();
+  @extend .container;
+  margin-left: auto;
+  margin-right: auto;
+  > div {
+    order: 1;
+    @include media-breakpoint-up(md) {
+      order: 2;
+    }
+    &:nth-child(1) {
+      order: 2;
+      @include media-breakpoint-up(md) {
+        order: 1;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      @include make-col(5);
+      &:nth-child(2) {
+        @include make-col(6);
+        margin-left: auto;
+        img {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 24px;
+      @include media-breakpoint-up(md) {
+        font-size: 36px;
+        margin-bottom: 80px;
+      }
+    }
+    span {
+      font-size: 16px;
+      @include media-breakpoint-up(md) {
+        font-size: 22px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      li {
+        display: inline-block;
+        margin-right: 18px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: #818181;
+      line-height: 24px;
+    }
+  }
+}
+
+.blog_inner {
+  div:nth-child(1) {
+    h2 {
+      margin-bottom: 32px;
+    }
+    div:first-of-type {
+      margin-bottom: 40px;
+      date,
+      span {
+        font-weight: 500;
+        color: #818181;
+        font-size: 16px;
+        padding-left: 35px;
+        background-image: url("../icons/calendar-month.svg");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        @include respond-to(375px) {
+          display: block;
+          margin-bottom: 15px;
+        }
+      }
+
+      date {
+        margin-right: 35px;
+        background-position: 0 2px;
+        background-image: url("../icons/eye.svg");
+      }
+    }
+    div:last-of-type {
+      padding-bottom: 40px;
+      margin-bottom: 45px;
+      border-bottom: 1px solid #d8d8d8;
+    }
+    h3 {
+      font-size: 22px;
+    }
+
+    > ul {
+      li {
+        margin-bottom: 27px;
+        date {
+          display: block;
+          font-size: 14px;
+          margin-bottom: 14px;
+          color: #b6b6b6;
+        }
+        a {
+          font-weight: 500;
+          color: $textColor;
+          font-size: 18px;
+          text-decoration: none;
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+  }
+}

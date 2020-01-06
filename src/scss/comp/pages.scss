@@ -1,0 +1,69 @@
+.page {
+  .page_header {
+    display: block;
+    padding-top: 116px;
+    padding-bottom: 116px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include respond-to(768px) {
+      padding-top: 58px;
+      padding-bottom: 58px;
+    }
+    > div {
+      @extend .container;
+    }
+    .head {
+      @extend .head;
+      padding-bottom: 0 !important;
+      display: inline-block;
+      color: #fff;
+      background-color: transparent;
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 60px;
+      position: relative;
+      z-index: 1;
+      padding-left: 15px;
+      padding-right: 15px;
+
+      @include respond-to(768px) {
+        font-size: 34px;
+      }
+      &::before {
+        content: "";
+        background: $orange;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        @include respond-to(768px) {
+          bottom: 2px;
+        }
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+  .portfolio_gallery {
+    margin-top: 0;
+    .head {
+      margin-top: 10px;
+    }
+  }
+
+  .blog {
+    @include media-breakpoint-up(md) {
+      padding-top: 80px;
+    }
+    ul {
+      padding: 0 15px;
+      li {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

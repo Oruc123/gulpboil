@@ -1,0 +1,48 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwU6fYFekK33NnFN37PHs0WO5tdQrZCw8" async defer></script>
+script.
+    var map_json_data = [
+        {
+            lat: "40.343801",
+            lng: "49.810175",
+            img: "icons/map_marker.svg"
+        }
+        ];
+main.page
+    include ./breadcamp.pug
+    .map
+        <div id="simple_map" data-latitude='40.394941' data-longitude='49.838264'></div> 
+        form#show_big_map_form
+            input(placeholder="Haradasız?")#show_big_map_type_adress
+            button İstiqaməti göstər
+
+
+    .contacts
+        div  
+            h2 Bizimlə əlaqə
+            ul
+                li
+                    a(href="#") Rəşid Behbudov küç. 31, Bakı, Azərbaycan
+                li
+                    a(href="tel:+#")  B.e-C 9:00-18:00   
+                li
+                    a(href="tel:+#") +994 12 850 00 08 
+                li
+                    a(href="tel:+#") +994 50 850 00 08
+                li
+                    a(href="mailto:hello@bureau.com") hello@bureau.com
+        div
+            form(action="#", method="post")
+                div
+                    input(type="text",name="name",required)#name
+                    label(for="name") Adınız
+                div
+                    input(type="email",name="email",required)#email
+                    label(for="email") Email
+                div
+                    input(type="text",name="topic",required)#topic
+                    label(for="topic") Mövzu
+                div
+                    textarea(name="", cols="10", rows="3",required)#message
+                    label(for="message") Mesajınız
+                button(type="submit") Göndər
+        

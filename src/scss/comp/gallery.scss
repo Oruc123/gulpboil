@@ -1,0 +1,112 @@
+.gallery {
+  @include make-container();
+  @include make-container-max-widths();
+  ul {
+    list-style: none;
+    padding-left: 15px;
+    @include make-row();
+    margin-top: 0;
+    margin-bottom: 0;
+    li {
+      padding-right: 30px;
+      margin-bottom: 30px;
+      height: 300px;
+      will-change: transform;
+      transition: all 0.5s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: rgba($orange, $alpha: 0.7);
+          opacity: 0;
+          transition: all 0.5s;
+        }
+
+        &:hover::after {
+          opacity: 1;
+        }
+      }
+      @include respond-to(1202px) {
+        height: 260px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &:nth-child(1) {
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(5);
+        }
+      }
+      &:nth-child(2) {
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(4);
+        }
+      }
+      &:nth-child(3) {
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(3);
+          padding-right: 0;
+        }
+      }
+      &:nth-child(6) {
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(5);
+          padding-right: 0;
+        }
+      }
+      &:nth-child(5) {
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(4);
+        }
+      }
+      &:nth-child(4) {
+        @include media-breakpoint-up(sm) {
+          @include make-col(6);
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col(3);
+        }
+      }
+
+      @include respond-to(768px) {
+        width: 100% !important;
+      }
+      @include respond-to(576px) {
+        padding-right: 0;
+      }
+    }
+    @include respond-to(768px) {
+      padding-right: 15px;
+    }
+  }
+}

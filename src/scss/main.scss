@@ -1,0 +1,47 @@
+@import "normalize";
+@import "bootstrap-grid.scss";
+@import "./comp/mixins.scss";
+@import "./comp/vars.scss";
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "./comp/fonts.scss";
+@import "./comp/fancy.css";
+@import "./comp/fancy.scss";
+@import "./comp/jquery-ui.scss";
+body {
+  overflow-x: hidden;
+  background: #fff;
+  font-family: "Montserrat", sans-serif;
+  color: $textColor;
+}
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+a {
+  transition: all 0.5s;
+}
+.container {
+  @include make-container();
+  @include make-container-max-widths();
+}
+
+.row {
+  @include make-row();
+}
+
+@import "./comp/header.scss";
+@import "./comp/mob_nav.scss";
+
+@import "./comp/slide.scss";
+@import "./comp/services.scss";
+@import "./comp/portfolio.scss";
+@import "./comp/blog.scss";
+@import "./comp/footer.scss";
+@import "./comp/animate.scss";
+@import "./comp/breadcump.scss";
+@import "./comp/about.scss";
+@import "./comp/contacts.scss";
+@import "./comp/partners.scss";
+@import "./comp/404.scss";

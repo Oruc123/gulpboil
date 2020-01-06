@@ -1,0 +1,67 @@
+.breadcump {
+  list-style: none;
+  @extend .container;
+  margin: 16px auto;
+  margin-bottom: 0px;
+  flex-direction: row;
+  li {
+    display: inline-block;
+    padding-right: 36px;
+    font-size: 12px;
+    width: auto;
+    position: relative;
+    a {
+      color: inherit;
+      font-size: 12px;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 4.5px;
+      height: 6px;
+      width: 4px;
+      background: url("../icons/breadcrumb.svg") 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+
+  li.active {
+    color: #b6b6b6;
+    a {
+      color: #b6b6b6;
+    }
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.pagination {
+  @include make-row();
+  @include make-container();
+  @include make-container-max-widths();
+  justify-content: center;
+  list-style: none;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+  li {
+    margin-right: 20px;
+    a {
+      text-decoration: none;
+      color: #818181;
+      @include font-p(400, 22px);
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+  li.active {
+    a {
+      color: $orange;
+    }
+  }
+}

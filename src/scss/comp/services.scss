@@ -1,0 +1,94 @@
+.services {
+  @extend .container;
+  padding-top: 40px;
+  .head {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  ul {
+    @include noList;
+    @extend .row;
+
+    li {
+      padding-left: 0;
+
+      @include media-breakpoint-up(md) {
+        @include make-col(4);
+        margin-bottom: 65px;
+      }
+
+      padding-left: 0;
+      > div {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-left: 0;
+        margin-bottom: 20px;
+        img {
+          margin-right: 19px;
+          align-self: center;
+        }
+        a {
+          color: $textColor;
+          @include font-p(700, 25px);
+          position: relative;
+          text-decoration: none;
+          &::before {
+            display: none;
+            transition: all 0.5s;
+            opacity: 0;
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background-color: $orange;
+            left: 0;
+            bottom: 4px;
+          }
+          &:hover::before {
+            display: block;
+            opacity: 1;
+          }
+        }
+      }
+      p {
+        @include font-m(400, 14px);
+        padding-right: 2.3vw;
+        color: #818181;
+        line-height: 24px;
+      }
+    }
+  }
+}
+.service {
+  @extend .container;
+  > div {
+    width: 60%;
+    @include respond-to(769px) {
+      width: 100%;
+    }
+    padding-top: 30px;
+    color: #818181;
+    p {
+      color: #818181;
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: $textColor;
+      @include font-p(700, 22px);
+    }
+
+    ul {
+      padding-left: 36px;
+      li {
+        line-height: 34px;
+        font-size: 14px;
+        padding-left: 36px;
+      }
+    }
+  }
+}

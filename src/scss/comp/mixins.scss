@@ -1,0 +1,22 @@
+@mixin noList {
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+@mixin font-p($weight, $size: 16px) {
+  font-family: "Playfair Display";
+  font-weight: $weight;
+  font-size: $size;
+}
+@mixin font-m($weight, $size: 16px) {
+  font-family: "Montserrat";
+  font-weight: $weight;
+  font-size: $size;
+}
+@mixin respond-to($media) {
+  @media only screen and (max-width: $media) {
+    @content;
+  }
+}

@@ -1,0 +1,248 @@
+header {
+  position: relative;
+  margin-bottom: 0;
+  @include make-container();
+  @include make-container-max-widths();
+  padding-top: 14px;
+  padding-bottom: 14px;
+  @include font-p(400);
+
+  .row {
+    padding: 0;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      color: $orange;
+    }
+  }
+  ul {
+    @include noList;
+  }
+
+  .logo {
+    @include respond-to(1060px) {
+      padding-left: 0;
+    }
+    @include make-col-ready();
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+    }
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(2);
+    }
+    @include respond-to(1060px) {
+      width: 130px;
+      height: 48px;
+      padding-right: 0;
+    }
+    img {
+      width: 158.34px;
+      height: 68.29px;
+      @include respond-to(1060px) {
+        width: 110px;
+        height: 48px;
+      }
+    }
+  }
+
+  @import "./nav.scss";
+  aside {
+    @include make-row();
+    @include make-col-ready();
+    @include make-container();
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+      justify-content: flex-end;
+      padding-bottom: 20px;
+    }
+    align-items: flex-start;
+    > div {
+      margin-bottom: 15px;
+      a {
+        color: $textColor;
+        @include font-m(400);
+      }
+      &:first-child {
+        width: 100%;
+        text-align: right;
+        margin-bottom: 8px;
+        a {
+          padding-left: 24px;
+          font-size: 14px;
+          background: url("../icons/phone.svg") 0 2px no-repeat;
+        }
+      }
+    }
+
+    ul:first-of-type {
+      li {
+        display: inline-block;
+        margin-right: 26px;
+        a {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+        }
+
+        &:first-child {
+          a {
+            background-image: url("../icons/facebook.svg");
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &:hover {
+              background-image: url("../icons/fb_hover.svg");
+            }
+          }
+        }
+        &:nth-child(2) {
+          a {
+            background-image: url("../icons/inst.svg");
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &:hover {
+              background-image: url("../icons/inst_hover.svg");
+            }
+          }
+        }
+        &:nth-child(3) {
+          a {
+            background-image: url("../icons/whatsapp.svg");
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &:hover {
+              background-image: url("../icons/whatsapp_hover.svg");
+            }
+          }
+        }
+      }
+    }
+    ul:last-child {
+      @include make-row();
+      align-self: flex-start;
+      li {
+        margin-right: 15px;
+        a {
+          @include font-p(400);
+          color: $textColor;
+          font-size: 16px;
+          display: inline-block;
+          transform: translateY(-5px);
+          position: relative;
+
+          &::before {
+            display: none;
+            z-index: 0;
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background-color: $orange;
+            left: 0;
+            bottom: -5px;
+          }
+          &:hover::before {
+            display: block;
+          }
+        }
+
+        a.active::before {
+          display: block;
+        }
+      }
+    }
+
+    .search_button {
+      display: inline-block;
+      margin-bottom: 0;
+      padding-left: 2px;
+      margin-right: 43px;
+      a {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url("../icons/search.svg");
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &:hover {
+          background-image: url("../icons/search_hover.svg");
+        }
+      }
+    }
+
+    @include respond-to(1060px) {
+      display: none;
+    }
+  }
+  .search {
+    z-index: 9;
+    display: none;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    > div {
+      padding-top: 10px;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      left: 0;
+      top: 0;
+      form {
+        width: 70%;
+        display: flex;
+        input {
+          display: block;
+          flex: 1;
+          border: none;
+          font-size: 16px;
+          margin: 0 15px;
+          padding: 5px 0px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        button {
+          border: none;
+          background-color: transparent;
+          cursor: pointer;
+          width: 16px;
+          height: 16px;
+          background-repeat: no-repeat;
+          background-position: 0px 0px;
+          background-image: url("../icons/search.svg");
+          transform: translateY(5px);
+          &.close {
+            transform: translateY(3px) scale(0.8);
+            background-image: url("../icons/close.svg");
+            background-size: auto;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .menubar {
+    display: none;
+    @include respond-to(1060px) {
+      display: block;
+      align-self: center;
+      margin-left: auto;
+      cursor: pointer;
+    }
+  }
+}

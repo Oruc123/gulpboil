@@ -1,0 +1,80 @@
+nav {
+  align-self: center;
+  @include make-col-ready();
+  @include media-breakpoint-up(lg) {
+    @include make-col(6);
+  }
+  min-width: 500px;
+  padding-right: 0;
+  > ul {
+    @include make-container();
+    @include make-row();
+    padding-left: 30px;
+    padding-right: 0;
+
+    li {
+      margin-right: 25px;
+      position: relative;
+      a {
+        color: $textColor;
+        display: inline-block;
+        position: relative;
+
+        overflow: visible;
+
+        &::before {
+          display: none;
+          z-index: 0;
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background-color: $orange;
+          left: 0;
+          bottom: -5px;
+        }
+        &:hover::before {
+          display: block;
+        }
+      }
+      &:hover ul {
+        display: block;
+        opacity: 1;
+      }
+      a.active::before {
+        display: block;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    > li {
+      ul {
+        transition: color 0.5s;
+        display: none;
+        opacity: 0;
+        z-index: 3;
+        min-width: 230px;
+
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 20px;
+        padding-top: 50px;
+        li {
+          padding-left: 25px;
+          margin-bottom: 25px;
+          a {
+            &:hover::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(1060px) {
+    display: none;
+  }
+}

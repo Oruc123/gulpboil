@@ -1,0 +1,167 @@
+#mob_nav {
+  display: none;
+  width: 100%;
+  left: 100%;
+  z-index: 99999;
+  position: fixed;
+  overflow-y: auto;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: #fff;
+  > div {
+    @include make-container();
+    @include make-container-max-widths();
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    .mob_close {
+      position: absolute;
+      right: 30px;
+      cursor: pointer;
+      top: 31px;
+      z-index: 9;
+    }
+  }
+  .search {
+    position: absolute;
+    opacity: 1;
+    width: 100%;
+    left: 0;
+    top: 70px;
+    height: 50px;
+    padding: 0;
+    display: block;
+    form {
+      width: 100%;
+      height: 100%;
+      padding-left: 15px;
+      background: #f8f8f8;
+      input {
+        background: #f8f8f8;
+        color: $textColor;
+      }
+      .close {
+        display: none;
+      }
+      .search_button {
+        align-self: center;
+        transform: translateY(0);
+      }
+    }
+  }
+  .logoContainer {
+    display: flex;
+  }
+  .langs {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    padding-top: 0;
+    margin-right: 70px;
+    flex: 1;
+    padding-left: 15px;
+    transform: translateY(-3px);
+    li {
+      margin-right: 30px;
+      padding-top: 0;
+      &:last-child {
+        margin-right: 0px;
+      }
+      a {
+        color: $textColor;
+        padding-top: 0;
+      }
+    }
+  }
+  .social {
+    margin-top: 90px;
+    li {
+      display: inline-block;
+      margin-right: 26px;
+      a {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+      }
+
+      &:first-child {
+        a {
+          background-image: url("../icons/facebook.svg");
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: cover;
+          &:hover {
+            background-image: url("../icons/fb_hover.svg");
+          }
+        }
+      }
+      &:nth-child(2) {
+        a {
+          background-image: url("../icons/inst.svg");
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: cover;
+          &:hover {
+            background-image: url("../icons/inst_hover.svg");
+          }
+        }
+      }
+      &:nth-child(3) {
+        a {
+          background-image: url("../icons/whatsapp.svg");
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: cover;
+          &:hover {
+            background-image: url("../icons/whatsapp_hover.svg");
+          }
+        }
+      }
+    }
+  }
+  nav {
+    margin-top: 100px;
+    display: block;
+    min-width: auto;
+    height: 300px;
+    ul {
+      flex-direction: column;
+      padding-left: 0;
+      li {
+        margin-bottom: 60px;
+        margin-right: 0;
+        a {
+          display: block;
+          &::before {
+            display: none !important;
+          }
+        }
+      }
+      ul {
+        opacity: 1;
+        display: none;
+        position: static !important;
+        padding-top: 0;
+
+        li {
+          padding-top: 60px;
+          padding-left: 35px;
+          margin-bottom: 0;
+          a {
+            color: #979797;
+          }
+        }
+      }
+    }
+  }
+  .parent-nav {
+    background-image: url("../icons/plus.svg");
+    background-position: 100% 2px;
+    background-repeat: no-repeat;
+  }
+  .opened {
+    background-image: url("../icons/minus.svg");
+    background-position: 100% 7px;
+  }
+}

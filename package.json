@@ -1,0 +1,25 @@
+{
+  "name": "isbureau",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-load-plugins": "^2.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
+  },
+  "dependencies": {
+    "bootstrap-4-grid": "^3.2.0",
+    "fancybox": "^3.0.1",
+    "jquery": "^3.4.1",
+    "merge-stream": "^2.0.0",
+    "node-normalize-scss": "^8.0.1",
+    "slick-carousel": "^1.8.1"
+  }
+}
